@@ -5,37 +5,6 @@ import roamAdapter from "../adapters/roamAdapter";
 export default {
   mixins: [roamAdapter],
   methods: {
-    isNumber(stringToTest: string) {
-      return /^\d+$/.test(stringToTest.trim());
-    },
-    getTweetLink(blockString: string) {
-      let tweetId = blockString.slice(
-        blockString.indexOf("/status/") + 8,
-        blockString.length
-      );
-
-      if (this.isNumber(tweetId)) {
-        return tweetId;
-      }
-
-      if (tweetId.trim().length == 0) {
-        return null;
-      }
-
-      if (tweetId.match(/\D/) == null) {
-        return null;
-      }
-
-      const match = tweetId.match(/\D/);
-
-      if (!match) {
-        return null;
-      }
-
-      tweetId = tweetId.slice(0, match.index);
-
-      return this.isNumber(tweetId) ? tweetId : null;
-    },
     processResults(results, showCodeBlocks, blockSearchKey, removePages) {
       let filteredResults: any[] = [];
 

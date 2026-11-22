@@ -1,3 +1,4 @@
+import { parseTweetLink } from "./parseTweetLink.mjs";
 import dataPreparation from "./dataPreparation";
 import roamAdapter from "../adapters/roamAdapter";
 import utils from "../common/utils";
@@ -237,13 +238,13 @@ export default {
 
       if (blockEditTime >= start && blockEditTime <= end) {
         if (searchScope == 2) {
-          let twitterLink = this.getTweetLink(block.string);
+          const tweet = parseTweetLink(block.string);
 
-          if (!twitterLink) {
+          if (!tweet) {
             return;
           }
 
-          block.tweetId = twitterLink;
+          block.tweet = tweet;
         }
 
         blockUidStringMap[block.uid] = block.string;
@@ -414,7 +415,7 @@ export default {
         if (searchScope == 1) {
           scopeSearchString = "![";
         } else if (searchScope == 2) {
-          scopeSearchString = "https://twitter.com/";
+          scopeSearchString = "/status/";
         } else {
           includeReferenceBlocks = false;
         }

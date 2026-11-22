@@ -107,32 +107,11 @@ export default {
         this.updatingChart = false;
       }, 300);
     },
-    getUserName(blockText) {
-      let start = blockText.indexOf("https://twitter.com/");
-      let end = blockText.indexOf("/status/");
-
-      if (start == -1 || end == -1) {
-        return null;
-      }
-
-      let userName = blockText.slice(start + 20, end).trim();
-
-      if (!userName || userName.length == 0) {
-        return;
-      }
-
-      let tempUser = userName.replaceAll("_", "");
-      if (tempUser.match(/^[a-z0-9]+$/i)) {
-        return userName;
-      }
-
-      return null;
-    },
     updateChart() {
       let userList = {};
 
       this.blockResults.forEach((block) => {
-        let userName = this.getUserName(block.string);
+        let userName = block.tweet?.username;
         if (!userName) {
           return;
         }
