@@ -3,30 +3,6 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-const Twitter = {
-  state: {
-    showConversationInTweet: false,
-    includeMediaInTweet: false,
-  },
-  getters: {
-    showConversationInTweet: (state) => {
-      return state.showConversationInTweet;
-    },
-    includeMediaInTweet: (state) => {
-      return state.includeMediaInTweet;
-    },
-  },
-  mutations: {
-    updateShowConversationInTweet(state, value) {
-      state.showConversationInTweet = value;
-    },
-    updateIncludeMediaInTweet(state, value) {
-      state.includeMediaInTweet = value;
-    },
-  },
-  namespaced: true,
-};
-
 const Globe = {
   state: {
     showMentionedCountries: false,
@@ -371,6 +347,5 @@ export default new Vuex.Store({
     ViewConfig: ViewConfig,
     ReferenceViewSearchConfig: ReferenceViewSearchConfig,
     DatasetsConfig: DatasetsConfig,
-    Twitter: Twitter,
   },
 });

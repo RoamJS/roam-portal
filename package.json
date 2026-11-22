@@ -30,7 +30,6 @@
     "vue-property-decorator": "^9.1.2",
     "vue-select": "^3.10.8",
     "vue-text-highlight": "^2.0.10",
-    "vue-tweet-embed": "https://github.com/dkapila/vue-tweet-embed/tarball/master",
     "vuewordcloud": "17.12.23",
     "vuex": "^3.5.1"
   },
