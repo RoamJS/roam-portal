@@ -2,6 +2,8 @@
 
 Roam Portal is a search engine designed to help you explore your data visually.
 
+[![#roam-js on Slack](https://roamjs.com/badges/slack.svg)](https://roamresearch.slack.com/archives/C016N2B66JU)
+
 ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2FDharam%2FqDMR9GQLKy.jpg?alt=media&token=015ac963-feb1-42c5-905f-3eda58da0068)
 
 ## Getting Started
